@@ -1,0 +1,78 @@
+
+:root {
+  /* Primary colors */
+  --primary-dark: #121212;     /* Dark background for main areas */
+  --primary-medium: #181818;   /* Medium dark for cards, containers */
+  --primary-light: #282828;    /* Lighter elements like buttons, hover states */
+  
+  /* Accent colors */
+  --accent-main: #1DB954;      /* Vibrant green for primary actions, active items */
+  --accent-secondary: #B33EFC; /* Purple for secondary elements, highlights */
+  --accent-tertiary: #FF5555;  /* Red for alerts, notifications */
+  
+  /* Text colors */
+  --text-primary: #FFFFFF;     /* White text for dark backgrounds */
+  --text-secondary: #B3B3B3;   /* Gray text for less important content */
+  --text-tertiary: #727272;    /* Light gray for placeholders, disabled */
+  
+  /* Border and shadow colors */
+  --border-color: #333333;     /* Subtle borders */
+  --shadow-color: rgba(0, 0, 0, 0.7); /* Shadows for modals, dropdowns */
+  
+  /* Gradient backgrounds */
+  --gradient-1: linear-gradient(135deg, #450af5, #c4efd9);
+  --gradient-2: linear-gradient(135deg, #846170, #70929c);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+a{
+  text-decoration: none;
+  color: var(--text-primary)
+}
+
+ul li{
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-primary);
+  background-color: var(--primary-dark);
+}
