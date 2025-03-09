@@ -1,12 +1,12 @@
 ---
-const { id, title, desc, link } = Astro.props;
+const {title, desc, link } = Astro.props;
 import { Image } from "astro:assets";
 import cardImage from "../assets/background.webp";
 ---
 
 <div class="card-container">
-  <Image src={cardImage} alt="Intervalos musicales." class="card-image" />
-  <h2>{title}</h2>
+ <Image src={cardImage} alt="Intervalos musicales." height=100 class="card-image" /> 
+  <h3>{title}</h3>
   <div class="description">
     <p>
       {desc}
@@ -24,7 +24,11 @@ import cardImage from "../assets/background.webp";
     display: flex;
     flex-direction: column;
     height: 100%;
+    border: 2px solid;
+    border-color: color-mix(in oklab, #acb5c7 40%, transparent);
   }
+
+
 
   .card-image {
     max-width: 100%;
@@ -32,7 +36,8 @@ import cardImage from "../assets/background.webp";
     border-radius: 10px;
   }
 
-  p {
+  .description {
+    margin-bottom: 1rem;
     font-size: 14px;
     line-height: 16px;
     text-align: justify;

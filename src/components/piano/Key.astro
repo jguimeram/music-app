@@ -1,0 +1,24 @@
+---
+const { value, isWhite } = Astro.props;
+---
+
+<div class:list={["key", { white: isWhite }, { black: !isWhite }]}>
+  <h5>{value}</h5>
+</div>
+
+<style>
+  .key {
+    width: 100px;
+    height: 300px;
+    color: red;
+    float: left;
+  }
+
+  .white {
+    background-color: white;
+  }
+
+  .black {
+    background-color: black;
+  }
+</style>

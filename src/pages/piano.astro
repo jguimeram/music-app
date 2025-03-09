@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Key from "../components/piano/Key.astro";
+const title = "Piano";
+const keys = [
+    {value: "C", isWhite: true},
+    {value: "C#", isWhite: false},
+    {value: "D", isWhite: true},
+    {value: "D#", isWhite: false},
+    {value: "E", isWhite: true},
+    {value: "F", isWhite: true},
+    {value: "F#", isWhite: false},
+    {value: "G", isWhite: true},
+    {value: "G#", isWhite: false},
+    {value: "E", isWhite: true},
+    {value: "E#", isWhite: false},
+    {value: "B", isWhite: true},
+]
+---
+
+<Layout title={title}>
+  <h1>Piano</h1>
+  <div class="container">
+    <div class="piano-container">
+        <div class="piano">
+            {   
+                 keys.map((key)=>( <Key value={key.value} isWhite={key.isWhite}  />))
+            }
+        </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+    .container{
+        width: 100vw;
+        border: 1px solid red;
+    }
+</style>
