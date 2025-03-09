@@ -1,35 +1,54 @@
 ---
-
+const { id, title, desc, link } = Astro.props;
+import { Image } from "astro:assets";
+import cardImage from "../assets/background.webp";
 ---
 
 <div class="card-container">
-    <h2>My Card</h2>
+  <Image src={cardImage} alt="Intervalos musicales." class="card-image" />
+  <h2>{title}</h2>
+  <div class="description">
     <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt
-      qui possimus nostrum doloribus labore, laboriosam illum nobis ullam
-      reprehenderit totam at ipsum ipsa dolores dolorem iure unde deleniti
-      tenetur?
+      {desc}
     </p>
-    <a href="#" class="card-link">Empezar</a>
+  </div>
+  <div class="link">
+    <a href={link} class="card-link">Empezar</a>
+  </div>
 </div>
 
 <style>
   .card-container {
-    background-color: var(--accent-secondary);
-    padding: 0.5rem;
+    padding: 0.3rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
-  p{
+  .card-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  p {
     font-size: 14px;
     line-height: 16px;
     text-align: justify;
   }
 
-  a.card-link{
+  /* auto margins in Flexbox absorb extra space: When an element inside a flex container has margin-top: auto, it expands to take up all the remaining space in that direction. */
+  div.link {
+    margin-top: auto;
+  }
+  a.card-link {
     display: block;
     margin-top: 5px;
-    background-color: blueviolet;
     text-align: center;
     border-radius: 5px;
+    width: 50%;
+    border: 1px solid;
+    border-color: color-mix(in oklab, #acb5c7 40%, transparent);
   }
 </style>

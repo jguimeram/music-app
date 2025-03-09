@@ -2,11 +2,11 @@
 :root {
   /* Primary colors */
   --primary-dark: #121212;     /* Dark background for main areas */
-  --primary-medium: #181818;   /* Medium dark for cards, containers */
+  --primary-medium: #06223f;   /* Medium dark for cards, containers */
   --primary-light: #282828;    /* Lighter elements like buttons, hover states */
   
   /* Accent colors */
-  --accent-main: #1DB954;      /* Vibrant green for primary actions, active items */
+  --accent-main: #09f;      /* Vibrant green for primary actions, active items */
   --accent-secondary: #B33EFC; /* Purple for secondary elements, highlights */
   --accent-tertiary: #FF5555;  /* Red for alerts, notifications */
   
@@ -74,5 +74,10 @@ body {
   line-height: 1.5;
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
   color: var(--text-primary);
-  background-color: var(--primary-dark);
+background: #141E30;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
 }

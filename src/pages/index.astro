@@ -1,33 +1,75 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro"
+import Card from "../components/Card.astro";
 const title = "Index";
 
+const cards = [
+  {
+    id: 0,
+    title: "Intervalos",
+    desc: "Los intervalos son las distancias entre las diferentes notas de una escala musical. Se especifican en intervalos de primera, de segunda, etc...",
+    link: "intervalos",
+  },
+  {
+    id: 1,
+    title: "Escalas musicales",
+    desc: "Las escalas musicales son el conjunto de notas que expresan una musicalidad específica. La escala principal es la de Do Mayor. Son las 7 notas blancas que podemos encontrar en un piano en sus diferentes octavas. Las escalas musicales son el conjunto de notas que expresan una musicalidad específica. La escala principal es la de Do Mayor. Son las 7 notas blancas que podemos encontrar en un piano en sus diferentes octavas.",
+    link: "escalas-musicales",
+  },
+  {
+    id: 2,
+    title: "Acordes",
+    desc: "Conjunto de tres o más notas que tocadas al mismo tiempo crean la armonía. Se expresan igual que los intervalos: Acordes de primera, Acordes de quinta, etc...",
+    link: "acordes",
+  },
+  {
+    id: 0,
+    title: "Intervalos",
+    desc: "Los intervalos son las distancias entre las diferentes notas de una escala musical. Se especifican en intervalos de primera, de segunda, etc...",
+    link: "intervalos",
+  },
+  {
+    id: 1,
+    title: "Escalas musicales",
+    desc: "Las escalas musicales son el conjunto de notas que expresan una musicalidad específica. La escala principal es la de Do Mayor. Son las 7 notas blancas que podemos encontrar en un piano en sus diferentes octavas.",
+    link: "escalas-musicales",
+  },
+  {
+    id: 2,
+    title: "Acordes",
+    desc: "Conjunto de tres o más notas que tocadas al mismo tiempo crean la armonía. Se expresan igual que los intervalos: Acordes de primera, Acordes de quinta, etc...",
+    link: "acordes",
+  },
+];
 ---
-
-<style>
-  .container {
-    max-width: 1200px;
-	height: 100lvh;
-    background-color: var(--primary-light);
-    margin: auto;
-	padding: 1rem;
-  }
-  .grid {
-    display: grid;
-	grid-template-columns: repeat(3,1fr);
-	gap: 1rem;
-  }
-
-</style>
 
 <Layout title={title}>
   <div class="container">
     <h1>{title}</h1>
     <div class="grid">
-		<Card />
-		<Card />
-		<Card />
+      {
+        cards.map((card) => (
+          <Card
+            id={card.id}
+            title={card.title}
+            desc={card.desc}
+            link={card.link}
+          />
+        ))
+      }
     </div>
   </div>
 </Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+</style>
